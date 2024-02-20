@@ -314,19 +314,20 @@ checksum = "d92bec98840b8f03a5ff5413de5293bfcd8bf96467cf5452609f939ec6f5de16"
 
 [[package]]
 name = "ashpd"
-version = "0.8.0"
+version = "0.6.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b22517ee647547c01a687cf9b76074e1c91334032a4324f7243c6ee0f949390"
+checksum = "4ac22eda5891cc086690cb6fa10121c0390de0e3b04eb269f2d766b00d3f2d81"
 dependencies = [
  "enumflags2",
  "futures-channel",
  "futures-util",
+ "once_cell",
  "rand 0.8.5",
  "serde",
  "serde_repr",
  "tokio",
  "url",
- "zbus 4.0.1",
+ "zbus 3.10.0",
 ]
 
 [[package]]
@@ -5065,9 +5066,9 @@ dependencies = [
 
 [[package]]
 name = "rfd"
-version = "0.14.0"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "373d2fc6310e2d14943d4e66ebed5b774a2b6b3b1610e7377edf124fb2760d6b"
+checksum = "c0d8ab342bcc5436e04d3a4c1e09e17d74958bfaddf8d5fad6f85607df0f994f"
 dependencies = [
  "ashpd",
  "block",
@@ -5080,7 +5081,7 @@ dependencies = [
  "objc",
  "objc-foundation",
  "objc_id",
- "raw-window-handle 0.6.0",
+ "raw-window-handle 0.5.2",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -6605,7 +6606,7 @@ version = "2.0.0-beta.0"
 dependencies = [
  "glib 0.16.9",
  "log",
- "raw-window-handle 0.6.0",
+ "raw-window-handle 0.5.2",
  "rfd",
  "serde",
  "serde_json",
@@ -7214,7 +7215,6 @@ dependencies = [
  "mio",
  "num_cpus",
  "pin-project-lite",
- "signal-hook-registry",
  "socket2 0.5.5",
  "tracing",
  "windows-sys 0.48.0",
@@ -8644,6 +8644,7 @@ dependencies = [
  "futures-sink",
  "futures-util",
  "hex",
+ "lazy_static",
  "nix 0.25.1",
  "once_cell",
  "ordered-stream",
@@ -8652,6 +8653,7 @@ dependencies = [
  "serde_repr",
  "sha1",
  "static_assertions",
+ "tokio",
  "tracing",
  "uds_windows",
  "winapi 0.3.9",
@@ -8690,7 +8692,6 @@ dependencies = [
  "serde_repr",
  "sha1",
  "static_assertions",
- "tokio",
  "tracing",
  "uds_windows",
  "windows-sys 0.52.0",
@@ -8858,6 +8859,7 @@ dependencies = [
  "libc",
  "serde",
  "static_assertions",
+ "url",
  "zvariant_derive 3.11.0",
 ]
 
@@ -8871,7 +8873,6 @@ dependencies = [
  "enumflags2",
  "serde",
  "static_assertions",
- "url",
  "zvariant_derive 4.0.0",
 ]
 

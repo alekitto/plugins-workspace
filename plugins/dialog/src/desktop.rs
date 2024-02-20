@@ -10,7 +10,7 @@
 
 use std::path::PathBuf;
 
-use raw_window_handle::{HasWindowHandle, RawWindowHandle};
+use raw_window_handle::{HasRawWindowHandle, RawWindowHandle};
 use serde::de::DeserializeOwned;
 use tauri::{plugin::PluginApi, AppHandle, Runtime};
 
@@ -97,11 +97,9 @@ impl From<MessageDialogKind> for rfd::MessageLevel {
 
 struct WindowHandle(RawWindowHandle);
 
-impl HasWindowHandle for WindowHandle {
-    fn window_handle(
-        &self,
-    ) -> Result<raw_window_handle::WindowHandle<'_>, raw_window_handle::HandleError> {
-        Ok(unsafe { raw_window_handle::WindowHandle::borrow_raw(self.0) })
+unsafe impl HasRawWindowHandle for WindowHandle {
+    fn raw_window_handle(&self) -> RawWindowHandle {
+        self.0
     }
 }
 
