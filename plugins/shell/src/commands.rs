@@ -108,6 +108,7 @@ fn prepare_cmd<R: Runtime>(
             .allows()
             .iter()
             .chain(global_scope.allows())
+            .cloned()
             .collect(),
     };
 

@@ -141,9 +141,9 @@ pub struct OpenScope {
 
 /// Scope for shell process spawning.
 #[derive(Clone)]
-pub struct ShellScope<'a> {
+pub struct ShellScope {
     /// All allowed commands, using their unique command name as the keys.
-    pub scopes: Vec<&'a Arc<ScopeAllowedCommand>>,
+    pub scopes: Vec<Arc<ScopeAllowedCommand>>,
 }
 
 /// All errors that can happen while validating a scoped command.
@@ -217,7 +217,7 @@ impl OpenScope {
     }
 }
 
-impl<'a> ShellScope<'a> {
+impl ShellScope {
     /// Validates argument inputs and creates a Tauri sidecar [`Command`].
     pub fn prepare_sidecar(
         &self,
